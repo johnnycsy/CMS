@@ -1,0 +1,484 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Johnny Cms Api",
+        "description": "Johnny Cms Api ",
+        "contact": {
+            "email": "johnny_login@163.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/getArticeClass": {
+            "get": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "getArticeClass 查询文章所有分类",
+                "description": "getArticeClass 查询文章所有分类",
+                "operationId": "Module",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/newArticeClass": {
+            "post": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "newArticeClass 创建文章分类",
+                "description": "newArticeClass 创建文章分类",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属id",
+                        "required": true,
+                        "schema": {
+                            "type": "Interger"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "分类名称",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/setArticeClass": {
+            "post": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "setArticeClass 修改文章分类",
+                "description": "setArticeClass 修改文章分类",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "文章id",
+                        "required": true,
+                        "schema": {
+                            "type": "Interger"
+                        }
+                    },
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属id",
+                        "required": true,
+                        "schema": {
+                            "type": "Interger"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "分类名称",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/delArticeClass": {
+            "post": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "delArticeClass 删除文章分类",
+                "description": "delArticeClass 删除文章分类",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "文章id",
+                        "required": true,
+                        "schema": {
+                            "type": "Interger"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/getAritecList": {
+            "get": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "getAritecList 查询文章/新闻列表",
+                "description": "getAritecList 查询文章/新闻列表",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "description": "查询目标页数",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "path",
+                        "description": "每页显示数量",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/getAritectIdList": {
+            "get": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "getAritectIdList 查询指定文章/新闻",
+                "description": "getAritectIdList 查询指定文章/新闻",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "文章目标id",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/newAritec": {
+            "post": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "newAritec 新建文章/新闻",
+                "description": "newAritec 新建文章/新闻",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属id",
+                        "required": true,
+                        "schema": {
+                            "type": "Interger"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "文章标题",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "path",
+                        "description": "发布作者",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "path",
+                        "description": "文章副标题",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "artice_val",
+                        "in": "path",
+                        "description": "文章内容",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "release_time",
+                        "in": "path",
+                        "description": "发布时间",
+                        "required": true,
+                        "schema": {
+                            "type": "Datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/setAritec": {
+            "post": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "setAritec 修改文章/新闻",
+                "description": "setAritec 修改文章/新闻",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "修改文章id",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属文章id",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "文章标题",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "path",
+                        "description": "文章作者",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "path",
+                        "description": "文章副标题",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "artice_val",
+                        "in": "path",
+                        "description": "文章内容",
+                        "required": true,
+                        "schema": {
+                            "type": "String"
+                        }
+                    },
+                    {
+                        "name": "release_time",
+                        "in": "path",
+                        "description": "发布时间",
+                        "required": true,
+                        "schema": {
+                            "type": "Datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/delAritec": {
+            "post": {
+                "tags": [
+                    "Cms 文章/新闻"
+                ],
+                "summary": "delAritec 删除文章/新闻",
+                "description": "delAritec 删除文章/新闻",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "修改文章id",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/getProductClass": {
+            "post": {
+                "tags": [
+                    "Cms 商品"
+                ],
+                "summary": "getProductClass 查询所有商品分类",
+                "description": "getProductClass 查询所有商品分类",
+                "operationId": "Module",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/setSystem": {
+            "post": {
+                "tags": [
+                    "Cms 系统信息"
+                ],
+                "summary": "setSystem 设置系统信息",
+                "description": "setSystem 设置系统信息",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "web_name",
+                        "in": "path",
+                        "description": "网站名称",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_host",
+                        "in": "path",
+                        "description": "网站地址",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_seo",
+                        "in": "path",
+                        "description": "SEO短语，使用英文逗号分割",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_title",
+                        "in": "path",
+                        "description": "网站标题",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_describe",
+                        "in": "path",
+                        "description": "网站详情",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_qq",
+                        "in": "path",
+                        "description": "站长QQ",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_wechat",
+                        "in": "path",
+                        "description": "站长微信",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_email",
+                        "in": "path",
+                        "description": "站长邮箱",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "web_contact",
+                        "in": "path",
+                        "description": "站长内容",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    }
+}
