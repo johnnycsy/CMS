@@ -12,7 +12,7 @@
         "/api/getArticeClass": {
             "get": {
                 "tags": [
-                    "Cms 文章/新闻"
+                    "Cms 文章/新闻分类"
                 ],
                 "summary": "getArticeClass 查询文章所有分类",
                 "description": "getArticeClass 查询文章所有分类",
@@ -27,7 +27,7 @@
         "/api/newArticeClass": {
             "post": {
                 "tags": [
-                    "Cms 文章/新闻"
+                    "Cms 文章/新闻分类"
                 ],
                 "summary": "newArticeClass 创建文章分类",
                 "description": "newArticeClass 创建文章分类",
@@ -62,7 +62,7 @@
         "/api/setArticeClass": {
             "post": {
                 "tags": [
-                    "Cms 文章/新闻"
+                    "Cms 文章/新闻分类"
                 ],
                 "summary": "setArticeClass 修改文章分类",
                 "description": "setArticeClass 修改文章分类",
@@ -106,7 +106,7 @@
         "/api/delArticeClass": {
             "post": {
                 "tags": [
-                    "Cms 文章/新闻"
+                    "Cms 文章/新闻分类"
                 ],
                 "summary": "delArticeClass 删除文章分类",
                 "description": "delArticeClass 删除文章分类",
@@ -370,11 +370,346 @@
         "/api/getProductClass": {
             "post": {
                 "tags": [
-                    "Cms 商品"
+                    "Cms 商品分类"
                 ],
                 "summary": "getProductClass 查询所有商品分类",
                 "description": "getProductClass 查询所有商品分类",
                 "operationId": "Module",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/newProductClass": {
+            "post": {
+                "tags": [
+                    "Cms 商品分类"
+                ],
+                "summary": "创建商品分类",
+                "description": "创建商品分类",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属ID",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "分类名称",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/setProductClass": {
+            "post": {
+                "tags": [
+                    "Cms 商品分类"
+                ],
+                "summary": "更新分类名称",
+                "description": "更新分类名称",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属ID",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "分类名称",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "目标ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/delProductClass": {
+            "post": {
+                "tags": [
+                    "Cms 商品分类"
+                ],
+                "summary": "删除分类",
+                "description": "删除分类",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "目标ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/getProduct": {
+            "post": {
+                "tags": [
+                    "Cms 商品"
+                ],
+                "summary": "查询商品列表",
+                "description": "查询商品列表",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "description": "查询页",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "size",
+                        "in": "path",
+                        "description": "查询每页显示数",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "path",
+                        "description": "搜索名称对象",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "查询所属分类",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/newProduct": {
+            "post": {
+                "tags": [
+                    "Cms 商品"
+                ],
+                "summary": "创建商品信息",
+                "description": "创建商品信息",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属ID",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "proName",
+                        "in": "path",
+                        "description": "商品名称",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "proPrice",
+                        "in": "path",
+                        "description": "商品价格",
+                        "required": true,
+                        "schema": {
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "proUnit",
+                        "in": "path",
+                        "description": "商品单位",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "proTitle",
+                        "in": "path",
+                        "description": "商品简介",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "proVal",
+                        "in": "path",
+                        "description": "商品详情",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/setProduct": {
+            "post": {
+                "tags": [
+                    "Cms 商品"
+                ],
+                "summary": "更新商品信息",
+                "description": "更新商品信息",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "目标ID",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "sid",
+                        "in": "path",
+                        "description": "所属ID",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    },
+                    {
+                        "name": "proName",
+                        "in": "path",
+                        "description": "商品名称",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "proPrice",
+                        "in": "path",
+                        "description": "商品价格",
+                        "required": true,
+                        "schema": {
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "proUnit",
+                        "in": "path",
+                        "description": "商品单位",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "proTitle",
+                        "in": "path",
+                        "description": "商品简介",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "proVal",
+                        "in": "path",
+                        "description": "商品详情",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/delProduct": {
+            "post": {
+                "tags": [
+                    "Cms 商品"
+                ],
+                "summary": "删除商品信息",
+                "description": "删除商品信息",
+                "operationId": "Module",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "目标ID",
+                        "required": true,
+                        "schema": {
+                            "type": "Integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "successful operation"

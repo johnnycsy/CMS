@@ -43,7 +43,7 @@ class ArticeClassControllers extends Controller
      * @OA\GET(
      *      path="/api/getArticeClass",
      *      operationId="Module",
-     *      tags={"Cms 文章/新闻"},
+     *      tags={"Cms 文章/新闻分类"},
      *      summary="getArticeClass 查询文章所有分类",
      *      description="getArticeClass 查询文章所有分类",
      *      @OA\Response( response=200,description="successful operation")
@@ -64,7 +64,7 @@ class ArticeClassControllers extends Controller
      * @OA\POST(
      *      path="/api/newArticeClass",
      *      operationId="Module",
-     *      tags={"Cms 文章/新闻"},
+     *      tags={"Cms 文章/新闻分类"},
      *      summary="newArticeClass 创建文章分类",
      *      description="newArticeClass 创建文章分类",
      *      @OA\Parameter( name="sid",description="所属id",required=true,in="path",@OA\Schema(type="Interger")),
@@ -98,7 +98,7 @@ class ArticeClassControllers extends Controller
      * @OA\POST(
      *      path="/api/setArticeClass",
      *      operationId="Module",
-     *      tags={"Cms 文章/新闻"},
+     *      tags={"Cms 文章/新闻分类"},
      *      summary="setArticeClass 修改文章分类",
      *      description="setArticeClass 修改文章分类",
      *      @OA\Parameter( name="id",description="文章id",required=true,in="path",@OA\Schema(type="Interger")),
@@ -134,7 +134,7 @@ class ArticeClassControllers extends Controller
      * @OA\POST(
      *      path="/api/delArticeClass",
      *      operationId="Module",
-     *      tags={"Cms 文章/新闻"},
+     *      tags={"Cms 文章/新闻分类"},
      *      summary="delArticeClass 删除文章分类",
      *      description="delArticeClass 删除文章分类",
      *      @OA\Parameter( name="id",description="文章id",required=true,in="path",@OA\Schema(type="Interger")),

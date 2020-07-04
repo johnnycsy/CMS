@@ -23,6 +23,8 @@ class ProductClassServiceImpl
      */
     private $ci;
 
+    private $table = "product_class";
+
     /**
      * ProductClassServiceImpl constructor.
      */
@@ -37,7 +39,43 @@ class ProductClassServiceImpl
      */
     public function getProductClassList()
     {
-        return DB::table("product_class")->get();
+        return DB::table($this->table)->get();
+    }
+
+    public function newProductClass($sid, $name)
+    {
+        $arr = [
+            'sid' => $sid,
+            'name' => $name,
+            'create_time' => date("Y-m-d H:i:s"),
+            'update_time' => date("Y-m-d H:i:s"),
+        ];
+        return DB::table("product_class")->insertGetId($arr);
+    }
+
+    public function setProductClass($id, $sid, $name)
+    {
+        $arr = [
+            'sid' => $sid,
+            'name' => $name,
+            'update_time' => date("Y-m-d H:i:s"),
+        ];
+        return DB::table($this->table)->where("id", $id)->update($arr);
+    }
+
+    public function delProductClass($id)
+    {
+        return DB::table($this->table)->where("id", $id)->delete();
+    }
+
+    public function getProductClassNameList($name, $sid)
+    {
+        return DB::table($this->table)->where("name", $name)->where("sid", $sid);
+    }
+
+    public function getProductClassNameIdList($id, $sid, $name)
+    {
+        return DB::table($this->table)->where("name", $name)->where("sid", $sid)->where("id", "!=", $id);
     }
 
 }

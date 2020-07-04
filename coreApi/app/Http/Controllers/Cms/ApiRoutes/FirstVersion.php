@@ -40,6 +40,16 @@ class FirstVersion
         Route::get("/delArticeClass", $this->CMS . "ArticeClassControllers@delArticeClass");
         // System
         Route::get("/setSystem", $this->CMS . "SystemControllers@setSystem");
+        // product class
+        Route::get("/getProductClass", $this->CMS . "ProductClassControllers@getProductClass");
+        Route::get("/newProductClass", $this->CMS . "ProductClassControllers@newProductClass");
+        Route::get("/setProductClass", $this->CMS . "ProductClassControllers@setProductClass");
+        Route::get("/delProductClass", $this->CMS . "ProductClassControllers@delProductClass");
+        /* product */
+        Route::get("/getProduct", $this->CMS . "ProductControllers@getProduct");
+        Route::get("/newProduct", $this->CMS . "ProductControllers@newProduct");
+        Route::get("/setProduct", $this->CMS . "ProductControllers@setProduct");
+        Route::get("/delProduct", $this->CMS . "ProductControllers@delProduct");
 
     }
 
