@@ -21,7 +21,7 @@ class WebSite extends Controller
 
     public function hello(): string
     {
-        return "Hello Word";
+        return "Hello CMS System";
     }
 
 }
